@@ -270,33 +270,123 @@ function arraysToObject(arr) {
 
 
 /*========================================
-                    ###
+    REVERSE STRING W/O SPLIT OR REVERSE
 ========================================*/
+
+function reverseString(str) {
+    let newStr = '';
+    for (let i = str.length - 1; i >= 0; i--) {
+        newStr += str[i];
+    }
+    
+    return newStr;
+};
 
 /*========================================
-                    ###
+        REPEAT HALF A STRING
 ========================================*/
+
+function repeats(str) {
+    
+    if(str.length % 2 !== 0) {
+        return false;
+    }
+    
+    let first = str.substr(0, str.length / 2);
+    let second = str.substr(str.length / 2);
+    
+    return first === second;
+};
+
+// Write a function named repeats that returns true if the first half of the string equals the last half, and false if not
+
+// Example:
+
+// If you pass it "haha" then it should return true because "ha" (the first half) equals "ha" (the second half)
+// If you pass it "yay" then it should return false because it's odd
+// If you pass it "heehaw" then it should return false because "hee" doesn't equal "haw"
 
 /*========================================
-                    ###
+    EVERY OTHER CHARACTER IN STRING
 ========================================*/
+
+function everyOther(str) {
+    let parseStr = '';
+    
+    for(let i = 0; i < str.length; i+=2) {
+        parseStr+=str[i];
+    }
+    
+    
+    return parseStr;
+};
 
 /*========================================
-                    ###
+     IF EVERY CHAR IN STRING IS SAME
 ========================================*/
+
+function allEqual(str) {
+    if(str[1] !== str[0]) {
+        return false;
+    } else {
+        return true;
+    }
+};
+
+// If you pass "aaa" it should return true
+// If you pass "aba" it should return false
 
 /*========================================
-                    ###
+        SUM OF EVERY CHAR IN STRING
 ========================================*/
+
+function sumLetters(str) {
+    let sum = 0;
+    let splitStr = str.split('');
+    
+    for (let i = 0; i < splitStr.length; i++) {
+        sum += parseInt(splitStr[i])
+    }
+    
+    return sum;
+};
+
+// If you pass "45" it should return 9
+// If you pass "246" it should return 12
 
 /*========================================
-                    ###
+        COUNT VOWELS IN STRING
 ========================================*/
+
+function countVowels(str) {
+    let result = 0;
+    let vowels = "aeiou"
+    
+    for (let i = 0; i < str.length; i++) {
+        for (let j = 0; j < vowels.length; j++) {
+            if (str[i] === vowels[j]) {
+                result++;
+                }
+            }
+        }
+    return result;
+};
 
 /*========================================
-                    ###
+    SPLIT STRING INTO ARRAY OF LETTERS
 ========================================*/
 
+function split(str) {
+    let arr = [];
+    
+    for (let i = 0; i < str.length; i++){
+        arr.push(str[i])
+    }
+    
+    
+    return arr;
+  };
+  
 /*========================================
                     ###
 ========================================*/
