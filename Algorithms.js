@@ -388,6 +388,181 @@ function split(str) {
   };
   
 /*========================================
+        RETURN ARRAY OF CODE POINTS
+========================================*/
+
+function getCodePoints(str) {
+    let arr = [];
+    
+    for (let i = 0; i < str.length; i++) {
+        arr.push(str.codePointAt([i]));
+    }
+    
+    
+    
+    return arr;
+};
+
+// If you pass "Hello" it should return [ 72, 101, 108, 108, 111 ]
+
+/*========================================
+            MAP LETTERS INTO OBJ
+========================================*/
+
+function letterMap(str) {
+    let obj = {};
+    
+    for (let i = 0; i < str.length; i++) {
+        obj[str[i]] = i;
+    }
+    
+    
+    return obj;
+};
+// If you pass "Yo" it should return {Y: 0, o: 1}
+// If you pass "Hello" it should return {H: 0, e: 1, l: 3, o: 4}
+
+/*========================================
+        COUNT LETTERS INTO OBJ
+========================================*/
+
+function letterCount(str) {
+    let obj = {};
+
+    for (let i of str) {
+        if(obj.hasOwnProperty([i])) {
+            obj[i] += 1;
+        } else {
+          obj[i] = 1; 
+        }
+    }
+    
+    return obj;
+};
+
+// If you pass "Yo" it should return {Y: 1, o: 1}
+// If you pass "Hello" it should return {"H": 1, "e": 1, "l": 2, "o": 1}
+
+/*========================================
+        AT LEAST THREE ODD #'S
+========================================*/
+
+function threeOdds(num, num2) {
+    let count = 0;
+    for (let i = num; i < num2; i++){
+        if(i % 2 !== 0){
+            count++;
+        }
+    }
+    if(count >= 3){
+        return true;
+    } else {
+        return false;
+    }
+};
+
+// If you pass 0,2 it should return false because the only number between 0 and 2 is 1
+// If you pass 0,6 it should return true because between 0 and six (the numbers 1,2,3,4,5) there are three odds - 1, 3 and 5
+
+/*========================================
+    CREATE A STRING OF # OF LETTERS
+========================================*/
+
+function createString(num, letter) {
+    let str = '';
+    
+    for (let i = 0; i < num; i++){
+        str += letter;
+    }
+    
+    return str;
+};
+
+// If you pass 3, "a" it should return "aaa"
+// If you pass 2, "b" it should return "bb"
+
+/*========================================
+            FACTORIALIZE A #
+========================================*/
+
+function factorial (num) {
+    if (num === 0) {
+        return 1;
+    }
+    
+    return num * factorial(num - 1);
+};
+
+/*========================================
+        AN ARRAY OF #'S 1 TO I
+========================================*/
+
+function arrayOfNumbers(num) {
+    let arr = [];
+    
+    for (let i = 1; i <= num; i++){
+        arr.push(i);
+    }
+    
+    return arr;
+};
+// If you pass 1 it should return [1]
+// If you pass 3 it should return [1,2,3]
+
+/*========================================
+        OBJECT OF EVEN AND ODD #'S
+========================================*/
+
+function evenOdd(num, num2) {
+    let obj = {};
+    
+    for (let i = num; i <= num2; i++) {
+        if(i % 2 !== 0) {
+            obj[i] = "odd"
+            
+        }
+        if(i % 2 !== 1){
+            obj[i] = "even"
+        }
+    }
+    
+    
+    return obj;
+};
+
+// If you pass 1,4 it should return {"1": "odd", "2": "even", "3": "odd", "4": "even"}
+
+/*========================================
+        ARRAY AND VALUE BOOLEAN
+========================================*/
+
+function every(arr, val) {
+    
+    let emptyarr = true;
+    
+    for(let i = 0; i < arr.length; i++) {
+        if (arr !== val){
+            emptyarr = false;
+        }
+        if (arr.pop() === val){
+            emptyarr = true;
+        }
+    }
+    return emptyarr;
+};
+
+// If you pass [1,1], 1 it should return true
+// If you pass [1,2], 1 it should return false
+
+/*========================================
+                    ###
+========================================*/
+
+/*========================================
+                    ###
+========================================*/
+
+/*========================================
                     ###
 ========================================*/
 
@@ -403,3 +578,38 @@ function split(str) {
                     ###
 ========================================*/
 
+/*========================================
+                    ###
+========================================*/
+
+/*========================================
+                    ###
+========================================*/
+
+/*========================================
+                    ###
+========================================*/
+
+/*========================================
+                    ###
+========================================*/
+
+/*========================================
+                    ###
+========================================*/
+
+/*========================================
+                    ###
+========================================*/
+
+/*========================================
+                    ###
+========================================*/
+
+/*========================================
+                    ###
+========================================*/
+
+/*========================================
+                    ###
+========================================*/
