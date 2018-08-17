@@ -517,12 +517,14 @@ function evenOdd(num, num2) {
     let obj = {};
     
     for (let i = num; i <= num2; i++) {
-        if(i % 2 !== 0) {
+        if (num === 0 && num2 === 0){
+            obj = {};
+        } else if(i % 2 !== 0) {
             obj[i] = "odd"
             
-        }
-        if(i % 2 !== 1){
+        } else{ 
             obj[i] = "even"
+            
         }
     }
     
@@ -555,12 +557,46 @@ function every(arr, val) {
 // If you pass [1,2], 1 it should return false
 
 /*========================================
-                    ###
+        ARRAY AND IF ONE BOOLEAN MATCH
 ========================================*/
 
+function some(arr, val) {
+    let result = false;
+    
+    for (let i = 0; i < arr.length; i++){
+        if (arr[i] === val){
+            result = true
+        }
+    }
+    
+    return result;
+};
+
+// If you pass [1,2], 1 it should return true
+// If you pass [3,2], 1 it should return false
+
 /*========================================
-                    ###
+    ARRAY TO STRING WITHOUT .JOIN()
 ========================================*/
+
+function toSentence(arr){
+    let str = '';
+    
+    for(let i = 0; i < arr.length; i++){
+        if(arr.length - 1 === i){
+            str += ' and ' + arr[i]
+        }else if(arr.length - 2 === i){
+            str += arr[i]
+        }else {
+            str += arr[i] + ', '
+        }
+    }
+    
+    return str;
+};
+
+// If you pass ["Sue", "Will"] it should return "Sue and Will"
+// If you pass ["Sue", "Will", "Rachel"] it should return "Sue, Will and Rachel"
 
 /*========================================
                     ###
