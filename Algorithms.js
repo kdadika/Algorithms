@@ -645,3 +645,107 @@ function toSentence(arr){
 /*========================================
                     ###
 ========================================*/
+
+
+
+
+
+// RANDOM ALGOS, WILL ADD TOMORROW:
+
+function acronym(arr){
+    let str = '';
+    
+    for(let i = 0; i < arr.length; i++){
+        str += arr[i][0];
+    }
+    
+    return str;
+};
+
+function index(arr, str){
+    let obj = {};
+    
+    for(let i = 0; i < arr.length; i++){
+        obj[arr[i][str]] = arr[i];
+    }
+    
+    
+    return obj;
+};
+
+function invert(obj){
+    let result = {};
+    
+    for(let i in obj){
+        result[obj[i]] = i;
+    }
+    
+    return result;
+  };
+
+  function addSignature(str, obj){
+    let result = {};
+    let signed = "-signed"
+    
+    for (let i in obj){
+        result[i + signed] = obj[i] + ' - ' + str;
+    }
+    
+    
+    return result;
+};
+
+function pairs(obj){
+    let arr = [];
+    
+    for (let i in obj){
+        let newKey = i + ' - ' + obj[i];
+        arr.push(newKey);
+    }
+    
+    return arr;
+};
+
+function sumValues(obj){
+    let sum = 0;
+    
+    for (let i in obj){
+        sum += obj[i];
+    }
+    
+    
+    return sum;
+};
+
+function biggestProperty(obj){
+    let highestVal;
+    let prop = 0;
+    
+    for (let i in obj){
+        if (obj[i] > prop) {
+            prop = obj[i];
+            highestVal = i;
+        }
+        
+    }
+    
+    return highestVal;
+};
+
+function keyForValue(obj, val){
+    
+    for (let i in obj){
+        if(obj[i] === val){
+            return i;
+        }
+    }
+};
+
+function containsValue(obj, val){
+    for (let i in obj){
+        if (obj[i] === val){
+            return true;
+        }
+    }
+    return false;
+};
