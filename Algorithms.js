@@ -749,3 +749,24 @@ function containsValue(obj, val){
     }
     return false;
 };
+
+//sum of numbers between two integers
+function getSum( a, b ) {
+
+    if (a === b){
+      return a
+    }
+
+    let result = 0
+
+    if (a < b){
+      for (let i = a; i <= b; i++){
+        result += i
+      }
+    } else {
+      for (let i = b; i <= a; i++){
+        result += i
+    }
+  }
+    return result
+}
