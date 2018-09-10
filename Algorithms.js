@@ -770,3 +770,17 @@ function getSum( a, b ) {
   }
     return result
 }
+
+//rotate array
+// For example, with n = [1,2,3,4,5,6,7] and k = 3, the array is rotated to [5,6,7,1,2,3,4].
+//Make sure not to return a copy of the array.
+
+function rotate(arr,k) {
+    let k = arr.slice(0, k + 1)
+    let j = arr.slice(k + 1)
+  
+      j.push(...k)
+      arr = j
+  
+      return arr
+  }
