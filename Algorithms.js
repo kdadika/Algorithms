@@ -784,3 +784,60 @@ function rotate(arr,k) {
   
       return arr
   }
+
+//sequence of sums
+// write a function that finds the first sequence of n numbers in an array that add up to the given sum
+// e.g sequenceSums([1,2,3,4], 5, 2) -> [2,3]
+// e.g sequenceSums([1,2,3,2], 5, 2) -> [2,3]
+// e.g sequenceSums([1,2,3,2], 10, 2) -> undefined
+// e.g sequenceSums([1,2,3,2,3,1], 10, 4) -> [2,3,2,3]
+  const sequenceSums = (arr, sum, n = 2) => {
+
+    for (let i = 0; i < arr.length; i++) {
+      let sliced = arr.slice(i, i + n)
+      if (sliced.reduce(sumArr) === sum) {
+        return sliced
+      }
+    }
+      return undefined
+  }
+  
+  function sumArr(num1, num2) {
+    return num1 + num2
+  }
+
+
+//   # Array Filter
+
+//   Write a function named `filter` that takes two arguments.
+//      `arr` (array)
+//      `predicate` (function)
+  
+//   Iterate over the elements of `arr` and return a _new_ array of all elements the `predicate` function returns truthy for. The `predicate` function is invoked with one argument.
+  
+//     `element` (anything)
+  
+//   For example:
+  
+//   ```
+//   var users = [
+//     { name: 'Katie', points: 240 },
+//     { name: 'Ralph', points: 130 }
+//   ];
+  
+//   var winners = filter(users, function(element) {
+//     return element.points >= 200;
+//   });
+  
+//   console.log(winners); // [{ name: 'Katie', points: 240 }]
+//   ```
+  const filterer = filter(arr, predicate(x)) => {
+    let arr2 = []
+  
+    for (let i = 0; i < arr.length; i++){
+      if(predicate(x[i])){
+        arr2.push(x[i])
+      }
+      return arr2
+    }
+  }
